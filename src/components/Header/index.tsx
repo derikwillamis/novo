@@ -1,3 +1,4 @@
+import React from "react";
 import Logoimg from "../../assets/logo.svg";
 import { Container, Content } from "./styled";
 

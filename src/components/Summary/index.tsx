@@ -1,3 +1,4 @@
+import React from "react";
 import incomeimg from "../../assets/income.svg";
 import outcomeimg from "../../assets/outcome.svg";
 import totalcomeimg from "../../assets/total.svg";
