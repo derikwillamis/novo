@@ -1,7 +1,8 @@
 import React from 'react';
 import Modal from 'react-modal';
-import {Container} from '../NewTransetionModal/styled'
+import {Container} from './styled'
 
+Modal.setAppElement('#root')
 
 interface NewTransactionModal {
   isOpen: boolean;
@@ -14,7 +15,7 @@ export function NewTransactionModal({
 }: NewTransactionModal) {
 
   return (
-    <Modal 
+    <Modal
     isOpen={isOpen} 
     onRequestClose={onRequestClose}
     overlayClassName="react-modal-overlay"
@@ -40,7 +41,6 @@ export function NewTransactionModal({
         Cadastrar
       </button>
       </Container>
-      
     </Modal>
   );
 }
