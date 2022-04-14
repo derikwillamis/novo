@@ -1,11 +1,9 @@
-import React from "react";
-import { usetransaction } from "../../hooks/useTransactions";
-import { Container } from "./styled";
-
-
+import React from 'react';
+import { useTransaction } from '../../hooks/TransactionContext';
+import { Container } from './styled';
 
 export function Transactionstable() {
-  const {transactions} = usetransaction();
+  const { transactions } = useTransaction();
 
   return (
     <Container>
@@ -19,18 +17,22 @@ export function Transactionstable() {
           </tr>
         </thead>
         <tbody>
-          {transactions.map(transaction =>(
-          <tr key={transaction.id}>
-            <td>{transaction.title}</td>
-            <td className={transaction.type}>
-              {new Intl.NumberFormat('pt-BR',{
-                style:'currency',
-                currency:'BRL'
-              }).format(transaction.amount)}
+          {transactions.map((transaction) => (
+            <tr key={transaction.id}>
+              <td>{transaction.title}</td>
+              <td className={transaction.type}>
+                {new Intl.NumberFormat('pt-BR', {
+                  style: 'currency',
+                  currency: 'BRL',
+                }).format(transaction.amount)}
               </td>
-            <td>{transaction.category}</td>
-            <td>{new Intl.DateTimeFormat('pt-BR').format(new Date(transaction.createdAt))}</td>
-          </tr>
+              <td>{transaction.category}</td>
+              <td>
+                {new Intl.DateTimeFormat('pt-BR').format(
+                  new Date(transaction.createdAt)
+                )}
+              </td>
+            </tr>
           ))}
         </tbody>
       </table>
