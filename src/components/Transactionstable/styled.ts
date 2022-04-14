@@ -29,7 +29,7 @@ export const Container = styled.div`
         color: var(--green);
       }
 
-      &.withdrow {
+      &.withdraw {
         color: var(--red);
       }
     }

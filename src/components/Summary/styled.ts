@@ -24,5 +24,9 @@ export const Container = styled.div`
       font-weight: 500;
       line-height: 3rem;
     }
+    &.highligh-background{
+      background: var(--green);
+      color:#fff;
+    }
   }
 `;
